@@ -1,583 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hitesh Kolluru — Software Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap"
-        rel="stylesheet" />
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hitesh Kolluru — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        :root {
-            --text-primary: #0f0f0f;
-            --text-secondary: #6b6b6b;
-            --text-tertiary: #9b9b9b;
-            --border: rgba(0, 0, 0, 0.12);
-            --border-strong: rgba(0, 0, 0, 0.22);
-            --bg: #ffffff;
-            --bg-secondary: #f7f6f3;
-            --radius: 6px;
-        }
+    :root {
+      --text-primary:   #0f0f0f;
+      --text-secondary: #6b6b6b;
+      --text-tertiary:  #9b9b9b;
+      --border:         rgba(0,0,0,0.12);
+      --border-strong:  rgba(0,0,0,0.22);
+      --bg:             #ffffff;
+      --bg-secondary:   #f7f6f3;
+      --radius:         6px;
+    }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text-primary: #f0f0ee;
-                --text-secondary: #9b9b9b;
-                --text-tertiary: #6b6b6b;
-                --border: rgba(255, 255, 255, 0.1);
-                --border-strong: rgba(255, 255, 255, 0.18);
-                --bg: #111110;
-                --bg-secondary: #1a1a18;
-            }
-        }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-primary:   #f0f0ee;
+        --text-secondary: #9b9b9b;
+        --text-tertiary:  #6b6b6b;
+        --border:         rgba(255,255,255,0.1);
+        --border-strong:  rgba(255,255,255,0.18);
+        --bg:             #111110;
+        --bg-secondary:   #1a1a18;
+      }
+    }
 
-        body {
-            font-family: 'DM Mono', monospace;
-            background: var(--bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+    body {
+      font-family: 'DM Mono', monospace;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 6rem;
-        }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5rem;
-            font-size: 13px;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5rem;
+      font-size: 13px;
+    }
 
-        .nav-name {
-            font-family: 'DM Serif Display', serif;
-            font-size: 14px;
-            color: var(--text-primary);
-        }
+    .nav-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 14px;
+      color: var(--text-primary);
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
+    .nav-links { display: flex; gap: 20px; }
 
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.15s;
-        }
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
 
-        nav a:hover {
-            color: var(--text-primary);
-        }
+    nav a:hover { color: var(--text-primary); }
 
-        .hero {
-            margin-bottom: 5rem;
-        }
+    .hero { margin-bottom: 5rem; }
 
-        .hero h1 {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2rem, 6vw, 3.2rem);
-            font-weight: 400;
-            line-height: 1.18;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-        }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
 
-        .hero h1 em {
-            font-style: italic;
-            color: var(--text-secondary);
-        }
+    .hero h1 em { font-style: italic; color: var(--text-secondary); }
 
-        .hero p {
-            font-size: 14px;
-            line-height: 1.9;
-            color: var(--text-secondary);
-            max-width: 520px;
-        }
+    .hero p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      max-width: 520px;
+    }
 
-        .hero-meta {
-            margin-top: 1.25rem;
-            font-size: 12px;
-            color: var(--text-tertiary);
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
+    .hero-meta {
+      margin-top: 1.25rem;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-        .hero-meta span::before {
-            content: "· ";
-        }
+    .hero-meta span::before { content: "· "; }
+    .hero-meta span:first-child::before { content: ""; }
 
-        .hero-meta span:first-child::before {
-            content: "";
-        }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1.5rem;
+    }
 
-        .section-label {
-            font-size: 11px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-tertiary);
-            margin-bottom: 1.5rem;
-        }
+    /* Publication */
+    .publication { margin-bottom: 5rem; }
 
-        /* Publication */
-        .publication {
-            margin-bottom: 5rem;
-        }
+    .pub-card {
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
 
-        .pub-card {
-            border: 0.5px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem;
-        }
+    .pub-title {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
 
-        .pub-title {
-            font-size: 13px;
-            font-weight: 500;
-            line-height: 1.55;
-            margin-bottom: 6px;
-        }
+    .pub-venue {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+    }
 
-        .pub-venue {
-            font-size: 11px;
-            color: var(--text-tertiary);
-            margin-bottom: 12px;
-        }
+    .bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 
-        .bullets {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+    .bullets li {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+    }
 
-        .bullets li {
-            font-size: 12px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            padding-left: 16px;
-            position: relative;
-        }
+    .bullets li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--text-tertiary);
+    }
 
-        .bullets li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--text-tertiary);
-        }
+    /* Projects */
+    .projects { margin-bottom: 5rem; }
 
-        /* Projects */
-        .projects {
-            margin-bottom: 5rem;
-        }
+    .project {
+      border-top: 0.5px solid var(--border);
+      padding: 1.25rem 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: start;
+    }
 
-        .project {
-            border-top: 0.5px solid var(--border);
-            padding: 1.25rem 0;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 8px;
-            align-items: start;
-        }
+    .project:last-child { border-bottom: 0.5px solid var(--border); }
 
-        .project:last-child {
-            border-bottom: 0.5px solid var(--border);
-        }
+    .proj-title { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
 
-        .proj-title {
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
+    .proj-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
 
-        .proj-desc {
-            font-size: 12px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 10px;
-        }
+    .proj-link {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--border);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
+    .proj-link:hover { color: var(--text-primary); }
 
-        .tag {
-            font-size: 11px;
-            padding: 2px 8px;
-            border: 0.5px solid var(--border);
-            border-radius: 3px;
-            color: var(--text-tertiary);
-        }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
-        .proj-date {
-            font-size: 11px;
-            color: var(--text-tertiary);
-            white-space: nowrap;
-            text-align: right;
-            padding-top: 1px;
-        }
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border: 0.5px solid var(--border);
+      border-radius: 3px;
+      color: var(--text-tertiary);
+    }
 
-        /* Experience */
-        .experience {
-            margin-bottom: 5rem;
-        }
+    .proj-date {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      text-align: right;
+      padding-top: 1px;
+    }
 
-        .job {
-            border-top: 0.5px solid var(--border);
-            padding: 1.25rem 0;
-        }
+    /* Experience */
+    .experience { margin-bottom: 5rem; }
 
-        .job:last-child {
-            border-bottom: 0.5px solid var(--border);
-        }
+    .job {
+      border-top: 0.5px solid var(--border);
+      padding: 1.25rem 0;
+    }
 
-        .job-header {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
+    .job:last-child { border-bottom: 0.5px solid var(--border); }
 
-        .job-title {
-            font-size: 14px;
-            font-weight: 500;
-        }
+    .job-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
 
-        .job-company {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 2px;
-        }
+    .job-title { font-size: 14px; font-weight: 500; }
+    .job-company { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
 
-        .job-date {
-            font-size: 11px;
-            color: var(--text-tertiary);
-            white-space: nowrap;
-            text-align: right;
-        }
+    .job-date {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      text-align: right;
+    }
 
-        /* Stack */
-        .stack {
-            margin-bottom: 5rem;
-        }
+    /* Stack */
+    .stack { margin-bottom: 5rem; }
 
-        .stack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 8px;
-        }
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 8px;
+    }
 
-        .stack-item {
-            border: 0.5px solid var(--border);
-            border-radius: var(--radius);
-            padding: 10px 12px;
-        }
+    .stack-item {
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+    }
 
-        .stack-cat {
-            font-size: 10px;
-            color: var(--text-tertiary);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 3px;
-        }
+    .stack-cat {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
 
-        .stack-name {
-            font-size: 12px;
-            color: var(--text-primary);
-            line-height: 1.5;
-        }
+    .stack-name { font-size: 12px; color: var(--text-primary); line-height: 1.5; }
 
-        /* Contact */
-        .contact p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.85;
-            margin-bottom: 1.5rem;
-            max-width: 480px;
-        }
+    /* Contact */
+    .contact p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+    }
 
-        .btn-row {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
 
-        .btn {
-            display: inline-block;
-            font-family: 'DM Mono', monospace;
-            font-size: 13px;
-            padding: 10px 20px;
-            border: 0.5px solid var(--border-strong);
-            border-radius: var(--radius);
-            text-decoration: none;
-            color: var(--text-primary);
-            background: transparent;
-            transition: background 0.15s;
-        }
+    .btn {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      padding: 10px 20px;
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text-primary);
+      background: transparent;
+      transition: background 0.15s;
+    }
 
-        .btn:hover {
-            background: var(--bg-secondary);
-        }
+    .btn:hover { background: var(--bg-secondary); }
 
-        footer {
-            margin-top: 6rem;
-            padding-top: 2rem;
-            border-top: 0.5px solid var(--border);
-            font-size: 11px;
-            color: var(--text-tertiary);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+    footer {
+      margin-top: 6rem;
+      padding-top: 2rem;
+      border-top: 0.5px solid var(--border);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-        @media (max-width: 500px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.9rem;
-            }
-
-            .job-header,
-            .project {
-                grid-template-columns: 1fr;
-            }
-
-            footer {
-                flex-direction: column;
-            }
-        }
-    </style>
+    @media (max-width: 500px) {
+      nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .hero h1 { font-size: 1.9rem; }
+      .job-header, .project { grid-template-columns: 1fr; }
+      footer { flex-direction: column; }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
+  <div class="container">
 
-        <nav>
-            <span class="nav-name">Hitesh Kolluru</span>
-            <div class="nav-links">
-                <a href="https://github.com/HiteshKolluru-asu" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://linkedin.com/in/hiteshkolluru" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="mailto:kolluru.hitesh@gmail.com">Email</a>
-            </div>
-        </nav>
+    <nav>
+      <span class="nav-name">Hitesh Kolluru</span>
+      <div class="nav-links">
+        <a href="https://github.com/HiteshKolluru-asu" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/hiteshkolluru" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:kolluru.hitesh@gmail.com">Email</a>
+      </div>
+    </nav>
 
-        <section class="hero">
-            <h1>Software engineer &amp;<br><em>ML practitioner.</em></h1>
-            <p>
-                I build backend systems, LLM-powered tools, and data pipelines —
-                and occasionally publish research. Currently finishing an MS in
-                Software Engineering at Arizona State, specializing in Data Science.
-            </p>
-            <div class="hero-meta">
-                <span>Tempe, AZ</span>
-                <span>GPA 3.7</span>
-                <span>Published · IS 2026</span>
-                <span>3+ yrs industry</span>
-            </div>
-        </section>
+    <section class="hero">
+      <h1>Software engineer &amp;<br><em>ML practitioner.</em></h1>
+      <p>
+        I build backend systems, LLM-powered tools, and data pipelines —
+        and occasionally publish research. Currently finishing an MS in
+        Software Engineering at Arizona State, specializing in Data Science.
+      </p>
+      <div class="hero-meta">
+        <span>Tempe, AZ</span>
+        <span>GPA 3.7</span>
+        <span>Published · IS 2026</span>
+        <span>3+ yrs industry</span>
+      </div>
+    </section>
 
-        <section class="publication">
-            <div class="section-label">Publication</div>
-            <div class="pub-card">
-                <p class="pub-title">GEMR:KG — A Knowledge Graph for Global Market Risk Analysis</p>
-                <p class="pub-venue">19th IADIS International Conference on Information Systems (IS 2026) · Zagreb,
-                    Croatia · March 2026 · Full Paper</p>
-                <ul class="bullets">
-                    <li>Unified 22 years of World Bank macroeconomic, governance, and credit risk data into a Dockerized
-                        GraphDB triple store using RDF/OWL inference to automate risk propagation across financial
-                        markets.</li>
-                    <li>Built a React dashboard with 3D geospatial visualization querying GraphDB via parameterized
-                        SPARQL, enabling multi-relational analysis previously infeasible across siloed datasets.</li>
-                </ul>
-            </div>
-        </section>
+    <section class="publication">
+      <div class="section-label">Publication</div>
+      <div class="pub-card">
+        <p class="pub-title">GEMR:KG — A Knowledge Graph for Global Market Risk Analysis</p>
+        <p class="pub-venue">19th IADIS International Conference on Information Systems (IS 2026) · Zagreb, Croatia · March 2026 · Full Paper</p>
+        <ul class="bullets">
+          <li>Unified 22 years of World Bank macroeconomic, governance, and credit risk data into a Dockerized GraphDB triple store using RDF/OWL inference to automate risk propagation across financial markets.</li>
+          <li>Built a React dashboard with 3D geospatial visualization querying GraphDB via parameterized SPARQL, enabling multi-relational analysis previously infeasible across siloed datasets.</li>
+        </ul>
+      </div>
+    </section>
 
-        <section class="projects">
-            <div class="section-label">Selected projects</div>
+    <section class="projects">
+      <div class="section-label">Selected projects</div>
 
-            <div class="project">
-                <div>
-                    <p class="proj-title">AI Copilot for Project Management</p>
-                    <p class="proj-desc">LLM-powered agent that maps natural language to REST API calls, executing
-                        project management operations in Taiga without manual UI interaction. FastAPI backend handles
-                        project and user queries end-to-end.</p>
-                    <div class="tags">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLM APIs</span>
-                    </div>
-                </div>
-                <span class="proj-date">2026<br>ongoing</span>
-            </div>
+      <div class="project">
+        <div>
+          <p class="proj-title">AI Copilot for Project Management</p>
+          <p class="proj-desc">LLM-powered agent that maps natural language to REST API calls, executing project management operations in Taiga without manual UI interaction. FastAPI backend handles project and user queries end-to-end.</p>
+          <a class="proj-link" href="https://github.com/HiteshKolluru-asu" target="_blank" rel="noopener">github.com/HiteshKolluru-asu ↗</a>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLM APIs</span>
+          </div>
+        </div>
+        <span class="proj-date">2026<br>ongoing</span>
+      </div>
 
-            <div class="project">
-                <div>
-                    <p class="proj-title">Agile Metrics Microservices Platform</p>
-                    <p class="proj-desc">Central orchestrator for a 22-person distributed platform — GitHub ingestion,
-                        MongoDB persistence, coordination across metric services. Led the cohesion metrics squad
-                        delivering LCOM4, LCOMHS, and Defect Scoring in Java.</p>
-                    <div class="tags">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span
-                            class="tag">Java</span><span class="tag">Vue.js</span><span class="tag">Docker</span><span
-                            class="tag">MongoDB</span>
-                    </div>
-                </div>
-                <span class="proj-date">2025</span>
-            </div>
+      <div class="project">
+        <div>
+          <p class="proj-title">Resonating Strike</p>
+          <p class="proj-desc">Multi-collection RAG pipeline that answers questions about the League of Legends First Stand 2026 tournament by blending verified match data with 1,500+ Reddit fan reactions. Simultaneous hybrid search (BM25 + semantic) across four ChromaDB collections — players, champions, tournament results, and community comments — fed into an esports analyst LLM persona.</p>
+          <a class="proj-link" href="https://github.com/HiteshKolluru-asu/ResonatingStrike" target="_blank" rel="noopener">github.com/HiteshKolluru-asu/ResonatingStrike ↗</a>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">ChromaDB</span><span class="tag">BM25</span><span class="tag">RAG</span><span class="tag">Groq API</span><span class="tag">Ollama</span>
+          </div>
+        </div>
+        <span class="proj-date">2026</span>
+      </div>
 
-            <div class="project">
-                <div>
-                    <p class="proj-title">FoodLang Interpreted Language</p>
-                    <p class="proj-desc">Statically typed interpreted language with a complete tokenizer,
-                        recursive-descent parser, AST, and tree-walk interpreter. Published a VS Code .vsix
-                        syntax-highlighting extension for the .fd format.</p>
-                    <div class="tags">
-                        <span class="tag">Python</span><span class="tag">VS Code Extension API</span>
-                    </div>
-                </div>
-                <span class="proj-date">2025</span>
-            </div>
+      <div class="project">
+        <div>
+          <p class="proj-title">GEMR:KG — Global Market Risk Knowledge Graph</p>
+          <p class="proj-desc">Combined three World Bank datasets (Global Economic Monitor, GEMs Risk Database, Governance Indicators) into a single OWL ontology and RDF triple store in GraphDB. Built an interactive React frontend with a 3D globe and SPARQL-driven economic indicator charts for six emerging market countries.</p>
+          <a class="proj-link" href="https://github.com/AGR19/GEMR-KG-Global-Emerging-Market-Risk-Knowledge-Graph" target="_blank" rel="noopener">github.com/AGR19/GEMR-KG ↗</a>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">RDF/OWL</span><span class="tag">GraphDB</span><span class="tag">SPARQL</span><span class="tag">React</span><span class="tag">Docker</span>
+          </div>
+        </div>
+        <span class="proj-date">2025–26</span>
+      </div>
 
-            <div class="project">
-                <div>
-                    <p class="proj-title">Rare Disease Identification in Imbalanced Datasets</p>
-                    <p class="proj-desc">Novel k-means-SMOTE algorithm clustering the minority class before synthetic
-                        sample generation, outperforming all baseline resampling methods on two UCI medical datasets —
-                        recall score 0.92.</p>
-                    <div class="tags">
-                        <span class="tag">Python</span><span class="tag">Scikit-learn</span><span
-                            class="tag">SMOTE</span>
-                    </div>
-                </div>
-                <span class="proj-date">2019</span>
-            </div>
+      <div class="project">
+        <div>
+          <p class="proj-title">Agile Metrics Microservices Platform</p>
+          <p class="proj-desc">Central orchestrator for a 22-person distributed platform — GitHub ingestion, MongoDB persistence, coordination across metric services. Led the cohesion metrics squad delivering LCOM4, LCOMHS, and Defect Scoring in Java.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Java</span><span class="tag">Vue.js</span><span class="tag">Docker</span><span class="tag">MongoDB</span>
+          </div>
+        </div>
+        <span class="proj-date">2025</span>
+      </div>
 
-        </section>
+      <div class="project">
+        <div>
+          <p class="proj-title">Web Analytics Browser Extension</p>
+          <p class="proj-desc">Vue 3 Chrome extension that monitors real-time network traffic, visualizes HTTP requests, and detects known tracking domains (e.g. Google Analytics) for any active tab. Built with Vite + Vue 3 using Chrome's service workers and content scripts model.</p>
+          <a class="proj-link" href="https://github.com/jeteish-pratap-singh/web-analytics-extension-ser598" target="_blank" rel="noopener">github.com/jeteish-pratap-singh/web-analytics-extension-ser598 ↗</a>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">Vue 3</span><span class="tag">Chrome Extension API</span><span class="tag">Vite</span>
+          </div>
+        </div>
+        <span class="proj-date">2025</span>
+      </div>
 
-        <section class="experience">
-            <div class="section-label">Experience</div>
+      <div class="project">
+        <div>
+          <p class="proj-title">FoodLang Interpreted Language</p>
+          <p class="proj-desc">Statically typed interpreted language with a complete tokenizer, recursive-descent parser, AST, and tree-walk interpreter. Published a VS Code .vsix syntax-highlighting extension for the .fd format.</p>
+          <a class="proj-link" href="https://github.com/HiteshKolluru-asu/SER502_FoodLang_Team31" target="_blank" rel="noopener">github.com/HiteshKolluru-asu/SER502_FoodLang_Team31 ↗</a>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">VS Code Extension API</span>
+          </div>
+        </div>
+        <span class="proj-date">2025</span>
+      </div>
 
-            <div class="job">
-                <div class="job-header">
-                    <div>
-                        <p class="job-title">Software Development Engineer</p>
-                        <p class="job-company">Capgemini · Pune, India</p>
-                    </div>
-                    <span class="job-date">Apr 2021 – Jun 2024</span>
-                </div>
-                <ul class="bullets">
-                    <li>Built API-driven dynamic UI for Banner Health's patient app where screens were generated at
-                        runtime from structured API responses, eliminating all hardcoded logic.</li>
-                    <li>Integrated 10+ backend APIs into a patient-facing clinical platform, resolving 100+ production
-                        incidents across Android and iOS.</li>
-                    <li>Led the org's first Xamarin to .NET MAUI migration and ran org-wide training sessions,
-                        establishing the internal standard adopted by all subsequent teams.</li>
-                </ul>
-            </div>
+      <div class="project">
+        <div>
+          <p class="proj-title">Rare Disease Identification in Imbalanced Datasets</p>
+          <p class="proj-desc">Novel k-means-SMOTE algorithm clustering the minority class before synthetic sample generation, outperforming all baseline resampling methods on two UCI medical datasets — recall score 0.92.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SMOTE</span>
+          </div>
+        </div>
+        <span class="proj-date">2019</span>
+      </div>
 
-            <div class="job">
-                <div class="job-header">
-                    <div>
-                        <p class="job-title">Machine Learning Engineer</p>
-                        <p class="job-company">OTO Qual · India</p>
-                    </div>
-                    <span class="job-date">May 2019 – Jan 2020</span>
-                </div>
-                <ul class="bullets">
-                    <li>Designed and built an NLP pipeline as a Flask REST API for automated legal clause extraction,
-                        reducing manual review time by 80%.</li>
-                    <li>Built a Scrapy crawler aggregating training data from 100+ legal websites; developed ASP.NET
-                        product features including PDF processing workflows.</li>
-                </ul>
-            </div>
+    </section>
 
-            <div class="job">
-                <div class="job-header">
-                    <div>
-                        <p class="job-title">Course Grader — Foundations of Software Engineering</p>
-                        <p class="job-company">Arizona State University · Tempe, AZ</p>
-                    </div>
-                    <span class="job-date">Aug – Dec 2025</span>
-                </div>
-                <ul class="bullets">
-                    <li>Evaluated graduate work on OO design, design patterns, refactoring, code smells, and static
-                        analysis for ASU's core MS Software Engineering course.</li>
-                    <li>Provided written feedback on deliverables worth 30%+ of the course grade, covering the full
-                        software lifecycle.</li>
-                </ul>
-            </div>
+    <section class="experience">
+      <div class="section-label">Experience</div>
 
-        </section>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <p class="job-title">Software Development Engineer</p>
+            <p class="job-company">Capgemini · Pune, India</p>
+          </div>
+          <span class="job-date">Apr 2021 – Jun 2024</span>
+        </div>
+        <ul class="bullets">
+          <li>Built API-driven dynamic UI for Banner Health's patient app where screens were generated at runtime from structured API responses, eliminating all hardcoded logic.</li>
+          <li>Integrated 10+ backend APIs into a patient-facing clinical platform, resolving 100+ production incidents across Android and iOS.</li>
+          <li>Led the org's first Xamarin to .NET MAUI migration and ran org-wide training sessions, establishing the internal standard adopted by all subsequent teams.</li>
+        </ul>
+      </div>
 
-        <section class="stack">
-            <div class="section-label">Tech</div>
-            <div class="stack-grid">
-                <div class="stack-item">
-                    <div class="stack-cat">Languages</div>
-                    <div class="stack-name">Python, Java, C#, JS, SPARQL</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-cat">AI / ML</div>
-                    <div class="stack-name">NLP, LLM APIs, Scikit-learn, Knowledge Graphs, RDF/OWL</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-cat">Backend</div>
-                    <div class="stack-name">FastAPI, Flask, .NET MAUI, Microservices</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-cat">Frontend</div>
-                    <div class="stack-name">React, Vue.js</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-cat">Data</div>
-                    <div class="stack-name">GraphDB, MongoDB, Postgres, Scrapy</div>
-                </div>
-                <div class="stack-item">
-                    <div class="stack-cat">Infra</div>
-                    <div class="stack-name">Docker, Git, Azure DevOps, CI/CD</div>
-                </div>
-            </div>
-        </section>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <p class="job-title">Machine Learning Engineer</p>
+            <p class="job-company">OTO Qual · India</p>
+          </div>
+          <span class="job-date">May 2019 – Jan 2020</span>
+        </div>
+        <ul class="bullets">
+          <li>Designed and built an NLP pipeline as a Flask REST API for automated legal clause extraction, reducing manual review time by 80%.</li>
+          <li>Built a Scrapy crawler aggregating training data from 100+ legal websites; developed ASP.NET product features including PDF processing workflows.</li>
+        </ul>
+      </div>
 
-        <section class="contact">
-            <div class="section-label">Get in touch</div>
-            <p>
-                Open to new grad SWE and MLE roles starting mid-2026.
-                Happy to talk backend systems, LLM tooling, or knowledge graphs.
-            </p>
-            <div class="btn-row">
-                <a class="btn" href="mailto:kolluru.hitesh@gmail.com">kolluru.hitesh@gmail.com →</a>
-                <a class="btn" href="https://linkedin.com/in/hiteshkolluru" target="_blank" rel="noopener">LinkedIn
-                    →</a>
-            </div>
-        </section>
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <p class="job-title">Course Grader — Foundations of Software Engineering</p>
+            <p class="job-company">Arizona State University · Tempe, AZ</p>
+          </div>
+          <span class="job-date">Aug – Dec 2025</span>
+        </div>
+        <ul class="bullets">
+          <li>Evaluated graduate work on OO design, design patterns, refactoring, code smells, and static analysis for ASU's core MS Software Engineering course.</li>
+          <li>Provided written feedback on deliverables worth 30%+ of the course grade, covering the full software lifecycle.</li>
+        </ul>
+      </div>
 
-        <footer>
-            <span>Hitesh Kolluru</span>
-            <span>MS Software Engineering · ASU · 2026</span>
-        </footer>
+    </section>
 
-    </div>
+    <section class="stack">
+      <div class="section-label">Tech</div>
+      <div class="stack-grid">
+        <div class="stack-item">
+          <div class="stack-cat">Languages</div>
+          <div class="stack-name">Python, Java, C#, JS, SPARQL</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-cat">AI / ML</div>
+          <div class="stack-name">NLP, LLM APIs, RAG, Scikit-learn, Knowledge Graphs, RDF/OWL</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-cat">Backend</div>
+          <div class="stack-name">FastAPI, Flask, .NET MAUI, Microservices</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-cat">Frontend</div>
+          <div class="stack-name">React, Vue.js, .NET MAUI, Xamarin, Android, iOS</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-cat">Data</div>
+          <div class="stack-name">GraphDB, ChromaDB, MongoDB, Postgres</div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-cat">Infra</div>
+          <div class="stack-name">Docker, Git, Azure DevOps, CI/CD</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="section-label">Get in touch</div>
+      <p>
+        Open to new grad SWE and MLE roles starting mid-2026.
+        Happy to talk backend systems, LLM tooling, or knowledge graphs.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="mailto:kolluru.hitesh@gmail.com">kolluru.hitesh@gmail.com →</a>
+        <a class="btn" href="https://linkedin.com/in/hiteshkolluru" target="_blank" rel="noopener">LinkedIn →</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>Hitesh Kolluru</span>
+      <span>MS Software Engineering · ASU · 2026</span>
+    </footer>
+
+  </div>
 </body>
-
 </html>
