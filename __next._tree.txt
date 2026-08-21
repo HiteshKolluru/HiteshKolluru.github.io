@@ -1,3 +1,3 @@
-:HL["/_next/static/chunks/0zrbidz1lzxc3.css","style"]
+:HL["/_next/static/chunks/0hs~dl5fzsub2.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=IBM+Plex+Sans:wght@300..600&family=JetBrains+Mono:wght@400..600&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"J-CFrRra7IkOy1TX5FFqM"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"PjhQ482y-w-eZ0VGHu710"}
